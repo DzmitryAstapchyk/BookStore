@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace BookStore.Core.Models
+﻿namespace BookStore.Core.Models
 {
     /// <summary>
     /// Data transfer object for order information
