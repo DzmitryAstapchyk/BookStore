@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
 namespace BookStore.Infrastructure.Migrations
 {
@@ -75,7 +74,7 @@ namespace BookStore.Infrastructure.Migrations
 
             migrationBuilder.InsertData(
                 table: "Books",
-                columns: new[] { "Id", "Author", "Description", "Price", "PublishDate", "Title" },
+                columns: ["Id", "Author", "Description", "Price", "PublishDate", "Title"],
                 values: new object[,]
                 {
                     { 1, "F. Scott Fitzgerald", "A story of wealth and love in the 1920s", 10.99m, new DateTime(1925, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "The Great Gatsby" },

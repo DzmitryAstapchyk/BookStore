@@ -28,6 +28,6 @@
         /// <summary>
         /// Collection of items in this order
         /// </summary>
-        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+        public ICollection<OrderItem> OrderItems { get; set; } = [];
     }
 }

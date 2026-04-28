@@ -12,16 +12,10 @@ namespace BookStore.API.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class BooksController : ControllerBase
+    public class BooksController(IBookRepository bookRepository, IMapper mapper) : ControllerBase
     {
-        private readonly IBookRepository _bookRepository;
-        private readonly IMapper _mapper;
-
-        public BooksController(IBookRepository bookRepository, IMapper mapper)
-        {
-            _bookRepository = bookRepository;
-            _mapper = mapper;
-        }
+        private readonly IBookRepository _bookRepository = bookRepository;
+        private readonly IMapper _mapper = mapper;
 
         /// <summary>
         /// Get all books with optional filtering

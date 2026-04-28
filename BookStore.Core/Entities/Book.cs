@@ -38,6 +38,6 @@
         /// <summary>
         /// Navigation property for orders containing this book
         /// </summary>
-        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+        public ICollection<OrderItem> OrderItems { get; set; } = [];
     }
 }

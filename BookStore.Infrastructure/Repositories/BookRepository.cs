@@ -9,14 +9,9 @@ namespace BookStore.Infrastructure.Repositories
     /// <summary>
     /// Implementation of IBookRepository using EF Core
     /// </summary>
-    public class BookRepository : IBookRepository
+    public class BookRepository(BookStoreDbContext context) : IBookRepository
     {
-        private readonly BookStoreDbContext _context;
-
-        public BookRepository(BookStoreDbContext context)
-        {
-            _context = context;
-        }
+        private readonly BookStoreDbContext _context = context;
 
         public async Task<IEnumerable<Book>> GetAllAsync(Expression<Func<Book, bool>>? filter = null)
         {

@@ -9,14 +9,9 @@ namespace BookStore.Infrastructure.Repositories
     /// <summary>
     /// Implementation of IOrderRepository using EF Core
     /// </summary>
-    public class OrderRepository : IOrderRepository
+    public class OrderRepository(BookStoreDbContext context) : IOrderRepository
     {
-        private readonly BookStoreDbContext _context;
-
-        public OrderRepository(BookStoreDbContext context)
-        {
-            _context = context;
-        }
+        private readonly BookStoreDbContext _context = context;
 
         public async Task<IEnumerable<Order>> GetAllAsync(Expression<Func<Order, bool>>? filter = null)
         {

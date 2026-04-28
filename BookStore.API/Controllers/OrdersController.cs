@@ -12,21 +12,14 @@ namespace BookStore.API.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class OrdersController : ControllerBase
+    public class OrdersController(
+        IOrderRepository orderRepository,
+        IBookRepository bookRepository,
+        IMapper mapper) : ControllerBase
     {
-        private readonly IOrderRepository _orderRepository;
-        private readonly IBookRepository _bookRepository;
-        private readonly IMapper _mapper;
-
-        public OrdersController(
-            IOrderRepository orderRepository,
-            IBookRepository bookRepository,
-            IMapper mapper)
-        {
-            _orderRepository = orderRepository;
-            _bookRepository = bookRepository;
-            _mapper = mapper;
-        }
+        private readonly IOrderRepository _orderRepository = orderRepository;
+        private readonly IBookRepository _bookRepository = bookRepository;
+        private readonly IMapper _mapper = mapper;
 
         /// <summary>
         /// Get all orders with optional filtering
@@ -64,7 +57,7 @@ namespace BookStore.API.Controllers
         public async Task<ActionResult<OrderDto>> CreateOrder(OrderDto orderDto)
         {
             // Validate order items
-            if (orderDto.OrderItems == null || !orderDto.OrderItems.Any())
+            if (orderDto.OrderItems == null || orderDto.OrderItems.Count == 0)
             {
                 return BadRequest("Order must contain at least one item");
             }

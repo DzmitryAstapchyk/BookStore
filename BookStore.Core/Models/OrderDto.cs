@@ -28,6 +28,6 @@
         /// <summary>
         /// List of items in the order
         /// </summary>
-        public List<OrderItemDto> OrderItems { get; set; } = new List<OrderItemDto>();
+        public List<OrderItemDto> OrderItems { get; set; } = [];
     }
 }

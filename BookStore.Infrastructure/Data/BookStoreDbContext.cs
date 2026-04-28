@@ -6,12 +6,8 @@ namespace BookStore.Infrastructure.Data
     /// <summary>
     /// Database context for the BookStore application
     /// </summary>
-    public class BookStoreDbContext : DbContext
+    public class BookStoreDbContext(DbContextOptions<BookStoreDbContext> options) : DbContext(options)
     {
-        public BookStoreDbContext(DbContextOptions<BookStoreDbContext> options) : base(options)
-        {
-        }
-
         public DbSet<Book> Books { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
