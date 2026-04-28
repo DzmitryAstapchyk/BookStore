@@ -4,6 +4,8 @@
 
 A professional implementation of a RESTful API for a bookstore management system. This project demonstrates clean architecture principles, efficient data handling, and robust error management in the .NET ecosystem.
 
+![Swagger UI Preview](images/swagger-ui.png)
+
 ## 🚀 Tech Stack
 *   **Framework:** .NET Core 3.1+ (supports .NET 6/8)
 *   **Database:** MS SQL Server / MySQL
