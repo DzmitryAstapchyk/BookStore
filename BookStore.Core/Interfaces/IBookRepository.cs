@@ -11,12 +11,12 @@ namespace BookStore.Core.Interfaces
         /// <summary>
         /// Get all books with optional filtering
         /// </summary>
-        Task<IEnumerable<Book>> GetAllAsync(Expression<Func<Book, bool>> filter = null);
+        Task<IEnumerable<Book>> GetAllAsync(Expression<Func<Book, bool>>? filter = null);
 
         /// <summary>
         /// Get a book by its ID
         /// </summary>
-        Task<Book> GetByIdAsync(int id);
+        Task<Book?> GetByIdAsync(int id);
 
         /// <summary>
         /// Add a new book

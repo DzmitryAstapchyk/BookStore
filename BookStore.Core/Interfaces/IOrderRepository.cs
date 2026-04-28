@@ -11,12 +11,12 @@ namespace BookStore.Core.Interfaces
         /// <summary>
         /// Get all orders with optional filtering
         /// </summary>
-        Task<IEnumerable<Order>> GetAllAsync(Expression<Func<Order, bool>> filter = null);
+        Task<IEnumerable<Order>> GetAllAsync(Expression<Func<Order, bool>>? filter = null);
 
         /// <summary>
         /// Get an order by its ID
         /// </summary>
-        Task<Order> GetByIdAsync(int id);
+        Task<Order?> GetByIdAsync(int id);
 
         /// <summary>
         /// Add a new order

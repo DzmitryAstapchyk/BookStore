@@ -18,7 +18,7 @@ namespace BookStore.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Order>> GetAllAsync(Expression<Func<Order, bool>> filter = null)
+        public async Task<IEnumerable<Order>> GetAllAsync(Expression<Func<Order, bool>>? filter = null)
         {
             IQueryable<Order> query = _context.Orders.Include(o => o.OrderItems).ThenInclude(oi => oi.Book);
 
@@ -30,7 +30,7 @@ namespace BookStore.Infrastructure.Repositories
             return await query.ToListAsync();
         }
 
-        public async Task<Order> GetByIdAsync(int id)
+        public async Task<Order?> GetByIdAsync(int id)
         {
             return await _context.Orders
                 .Include(o => o.OrderItems)

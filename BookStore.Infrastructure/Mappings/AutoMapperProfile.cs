@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using BookStore.Core.Entities;
 using BookStore.Core.Models;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace BookStore.Infrastructure.Mappings
 {

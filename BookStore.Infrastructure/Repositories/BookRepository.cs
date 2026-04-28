@@ -18,7 +18,7 @@ namespace BookStore.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Book>> GetAllAsync(Expression<Func<Book, bool>> filter = null)
+        public async Task<IEnumerable<Book>> GetAllAsync(Expression<Func<Book, bool>>? filter = null)
         {
             IQueryable<Book> query = _context.Books;
 
@@ -30,7 +30,7 @@ namespace BookStore.Infrastructure.Repositories
             return await query.ToListAsync();
         }
 
-        public async Task<Book> GetByIdAsync(int id)
+        public async Task<Book?> GetByIdAsync(int id)
         {
             return await _context.Books.FirstOrDefaultAsync(b => b.Id == id);
         }
