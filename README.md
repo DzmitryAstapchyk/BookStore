@@ -1,4 +1,5 @@
-![License: MIT](https://shields.io)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 # 📚 BookStore Web API
 
 A professional implementation of a RESTful API for a bookstore management system. This project demonstrates clean architecture principles, efficient data handling, and robust error management in the .NET ecosystem.
