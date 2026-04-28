@@ -28,7 +28,7 @@
         /// <summary>
         /// Navigation property to the book
         /// </summary>
-        public Book Book { get; set; }
+        public Book? Book { get; set; }
 
         /// <summary>
         /// Foreign key for the order
@@ -38,6 +38,6 @@
         /// <summary>
         /// Navigation property to the order
         /// </summary>
-        public Order Order { get; set; }
+        public Order? Order { get; set; }
     }
 }

@@ -13,7 +13,7 @@
         /// <summary>
         /// Order number (for display purposes)
         /// </summary>
-        public string OrderNumber { get; set; }
+        public string? OrderNumber { get; set; }
 
         /// <summary>
         /// Date when the order was placed

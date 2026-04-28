@@ -35,13 +35,13 @@ namespace BookStore.API.Controllers
         /// <param name="orderDate">Filter by order date (exact date)</param>
         /// <returns>List of orders</returns>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<OrderDto>>> GetOrders(string orderNumber = null, DateTime? orderDate = null)
+        public async Task<ActionResult<IEnumerable<OrderDto>>> GetOrders(string? orderNumber = null, DateTime? orderDate = null)
         {
-            Expression<Func<Order, bool>> filter = null;
+            Expression<Func<Order, bool>>? filter = null;
 
             if (!string.IsNullOrEmpty(orderNumber))
             {
-                filter = o => o.OrderNumber == orderNumber;
+                filter = o => o.OrderNumber! == orderNumber;
             }
 
             if (orderDate.HasValue)

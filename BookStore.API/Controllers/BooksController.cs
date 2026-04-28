@@ -30,13 +30,13 @@ namespace BookStore.API.Controllers
         /// <param name="publishDate">Filter by publish date (exact date)</param>
         /// <returns>List of books</returns>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BookDto>>> GetBooks(string title = null, DateTime? publishDate = null)
+        public async Task<ActionResult<IEnumerable<BookDto>>> GetBooks(string? title = null, DateTime? publishDate = null)
         {
-            Expression<Func<Book, bool>> filter = null;
+            Expression<Func<Book, bool>>? filter = null;
 
             if (!string.IsNullOrEmpty(title))
             {
-                filter = b => b.Title.Contains(title);
+                filter = b => b.Title!.Contains(title);
             }
 
             if (publishDate.HasValue)

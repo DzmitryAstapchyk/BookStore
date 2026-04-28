@@ -21,7 +21,7 @@ namespace BookStore.Infrastructure.Mappings
 
             // OrderItem mappings
             CreateMap<OrderItem, OrderItemDto>()
-                .ForMember(dest => dest.BookTitle, opt => opt.MapFrom(src => src.Book.Title));
+                .ForMember(dest => dest.BookTitle, opt => opt.MapFrom(src => src.Book != null ? src.Book.Title : null));
             CreateMap<OrderItemDto, OrderItem>();
         }
     }
